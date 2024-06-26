@@ -1,8 +1,20 @@
-# React + Vite
+# SportNation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a personal project, using React Vite (JavaScript) and it just 30% of progress.
 
-Currently, two official plugins are available:
+## Usage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Install Node v20.13.1
+- Install pnpm (npm i -g pnpm)
+- Run "pnpm run dev" on terminal root folder
+- Open the link
+- If you want to deploy it run "pnpm build"
+
+## Planning for the future
+
+- Using express + MySQL in server side
+- Add midtrans payments gateway
+- JWT Tokens for authorization
+- Register use email OTP verify
+- Migrate to golang + MySQL
+- and the last I want to migrate db to NoSQL (MongoDB)
