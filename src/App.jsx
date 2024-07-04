@@ -9,23 +9,28 @@ import Footer from './pages/Footer';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import { CartProvider } from './hooks/CartContext';
+import { Login } from './pages/Login';
+import { LoginProvider } from './hooks/LoginContext';
 
 function App() {
   return (
-    <CartProvider>
-      <Router>
-        <Header />
-        <main id="main" className="bg-white dark:bg-gray-900">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/checkout" element={<Checkout />} />
-          </Routes>
-        </main>
-        <Footer />
-      </Router>
-    </CartProvider>
+    <LoginProvider>
+      <CartProvider>
+        <Router>
+          <Header />
+          <main id="main" className="bg-white dark:bg-gray-900">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Routes>
+          </main>
+          <Footer />
+        </Router>
+      </CartProvider>
+    </LoginProvider>
   );
 }
 

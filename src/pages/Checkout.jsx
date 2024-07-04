@@ -58,16 +58,19 @@ const Checkout = () => {
             </div>
             <ul>
               {cartItems.map((item) => (
-                <li key={item.id} className="flex flex-row gap-2 my-5">
+                <li
+                  key={item.product.productId}
+                  className="flex flex-row gap-2 my-5"
+                >
                   <img
                     src="https://via.placeholder.com/300"
                     alt=""
                     className="w-20 h-20 object-cover border-2 border-black dark:border-black"
                   />
                   <div className="flex flex-col justify-between ">
-                    <p>{item.name}</p>
+                    <p>{item.product.name}</p>
                     <p className="text-gray-400">
-                      {item.orderQuantity}x{item.price}
+                      {item.quantity}x{item.product.price}
                     </p>
                   </div>
                 </li>
@@ -89,10 +92,12 @@ const Checkout = () => {
             </select>
             <p>
               Total:{' '}
-              {cartItems.reduce(
-                (acc, item) => acc + item.price * item.orderQuantity,
-                0,
-              ) + expeditionCost}
+              {(
+                cartItems.reduce(
+                  (acc, item) => acc + item.product.price * item.quantity,
+                  0,
+                ) + expeditionCost
+              ).toLocaleString()}
             </p>
           </div>
         </section>
