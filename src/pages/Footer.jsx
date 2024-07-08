@@ -1,18 +1,17 @@
 const Footer = () => {
   return (
     <>
-      <footer className="bg-gray-900 dark:bg-gray-900">
+      <footer className="bg-gray-800">
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
-              <a href="https://flowbite.com/" className="flex items-center">
+              <a href="" className="flex items-center">
                 <img
                   src="https://via.placeholder.com/100"
                   className="h-8 me-2"
-                  alt="Flowbite Logo"
                 />
                 <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-                  Sport<span className="text-red-500 font-bold">Nation</span>
+                  Sport<span className="font-bold">Nation</span>
                 </span>
               </a>
             </div>
@@ -43,10 +42,7 @@ const Footer = () => {
                 </h2>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
-                    <a
-                      href="https://github.com/themesberg/flowbite"
-                      className="hover:underline "
-                    >
+                    <a href="" className="hover:underline ">
                       Github
                     </a>
                   </li>
