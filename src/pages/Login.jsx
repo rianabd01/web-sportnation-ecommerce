@@ -22,8 +22,8 @@ export const Login = () => {
   };
 
   return (
-    <div className="max-w-screen-xl bg-inherit mx-auto p-4 dark:text-white">
-      <h1 className="text-black dark:text-white text-center font-bold text-2xl">
+    <div className="max-w-screen-xl bg-gray-50 mx-auto p-4 text-gray-950">
+      <h1 className="text-black text-inherit text-center font-bold text-2xl">
         Login
       </h1>
       <form
@@ -33,7 +33,7 @@ export const Login = () => {
         <div className="flex flex-col gap-2">
           <label className="text-black ">Username:</label>
           <input
-            className="text-black bg-gray-50 w-full h-10 px-2"
+            className="text-black outline bg-gray-50 w-full h-10 px-2"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -42,7 +42,7 @@ export const Login = () => {
         <div className="flex flex-col gap-2">
           <label className="text-black ">Password:</label>
           <input
-            className="text-black bg-gray-50 w-full h-10 px-2"
+            className="text-black outline bg-gray-50 w-full h-10 px-2"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -50,7 +50,7 @@ export const Login = () => {
         </div>
         <button
           type="submit"
-          className="block w-28 h-10 outline rounded mt-5 hover:rounded-none"
+          className="block w-28 h-10 bg-gray-200 rounded mt-5 hover:rounded-none"
         >
           Login
         </button>

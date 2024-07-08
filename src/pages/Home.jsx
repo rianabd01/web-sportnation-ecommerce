@@ -4,10 +4,8 @@ import React from 'react';
 const Home = () => {
   return (
     <>
-      <div className="max-w-screen-xl bg-inherit mx-auto p-4 dark:text-white">
-        <h1 className="text-black dark:text-white text-center font-bold text-2xl">
-          Home
-        </h1>
+      <div className="max-w-screen-xl bg-inherit text-inherit mx-auto p-4">
+        <h1 className="text-black text-center font-bold text-2xl">Home</h1>
       </div>
     </>
   );
