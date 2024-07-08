@@ -18,7 +18,7 @@ function App() {
       <CartProvider>
         <Router>
           <Header />
-          <main id="main" className="bg-white dark:bg-gray-900">
+          <main id="main" className="bg-gray-50 text-gray-950">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
