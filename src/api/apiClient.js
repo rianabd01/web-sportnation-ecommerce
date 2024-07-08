@@ -11,14 +11,18 @@ const instance = axios.create({
 
 instance.interceptors.response.use(
   function (response) {
-    return response.data;
+    return response;
   },
   function (error) {
-    console.log(
-      'Looks like there was a problem. Status Code: ',
-      error.response.status,
-    );
-    return Promise.reject(error);
+    if (error.response) {
+      console.log(
+        'Looks like there was a problem. Status Code: ',
+        error.response.status,
+      );
+      return Promise.reject(error);
+    } else {
+      console.log('server unavailable');
+    }
   },
 );
 
