@@ -110,7 +110,7 @@ const Navbar = () => {
               <div
                 className={`${
                   isDropdownOpen ? 'block md:mt-5' : 'hidden'
-                } relative md:absolute right-0 z-10 font-normal divide-y rounded-lg shadow-none md:shadow w-44 bg-inherit md:bg-gray-700 divide-gray-600`}
+                } static md:absolute md:right-0 md:z-10 font-normal divide-y rounded-lg shadow-none md:shadow md:w-44 bg-inherit md:bg-gray-700 divide-gray-600`}
               >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-400"
@@ -121,23 +121,7 @@ const Navbar = () => {
                       to="/dashboard"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
-                      Dashboard
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/settings"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Settings
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/earnings"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Earnings
+                      Your profile
                     </Link>
                   </li>
                 </ul>

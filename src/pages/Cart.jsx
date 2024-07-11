@@ -18,13 +18,6 @@ const Cart = () => {
   const { isLogin } = useLogin();
   const userData = JSON.parse(isLogin);
 
-  const calculateTotal = (checked) => {
-    const totalAmount = checked.reduce((acc, product) => {
-      return acc + product.product.price * product.quantity;
-    }, 0);
-    setTotal(totalAmount);
-  };
-
   const getCartList = async () => {
     try {
       const { token } = userData;
@@ -46,6 +39,12 @@ const Cart = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLogin]);
 
+  const calculateTotal = (checked) => {
+    const totalAmount = checked.reduce((acc, product) => {
+      return acc + product.product.price * product.quantity;
+    }, 0);
+    setTotal(totalAmount);
+  };
   const decreaseOrderQtyHandler = (productId) => {
     // Implement logic to decrease order quantity
   };
@@ -117,29 +116,35 @@ const Cart = () => {
           ) : (
             <ul className="flex flex-col w-full">
               {products.map((product) => (
-                <li
-                  key={product.cartId}
-                  className="flex flex-wrap m-5 justify-between gap-2 md:gap-5"
-                >
-                  <div className="flex flex-row gap-2 md:gap-5 w-fit">
-                    <input
-                      type="checkbox"
-                      className="w-4 h-4 m-auto accent-gray-950 border-black cursor-pointer focus:ring-gray-950  focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      checked={product.isChecked}
-                      onChange={() => handleCheck(product.cartId)}
-                    />
-                    <img
-                      src="https://via.placeholder.com/300"
-                      alt={product.product.name}
-                      className="w-20 h-20 md:w-40 md:h-40 object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-row flex-[3] justify-between">
-                    <div className="flex flex-col justify-between">
+                <li key={product.cartId} className="flex flex-row p-5">
+                  <input
+                    type="checkbox"
+                    className="w-4 h-4 m-auto accent-gray-950 border-black cursor-pointer focus:ring-gray-950  focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    checked={product.isChecked}
+                    onChange={() => handleCheck(product.cartId)}
+                  />
+                  <div className="grid grid-cols-3 grid-rows-3 md:grid-cols-4 md:grid-rows-2 m-5 justify-between gap-2 md:gap-5">
+                    <div className="row-span-2 md:row-span-2 flex flex-row gap-2 md:gap-5 w-fit">
+                      <img
+                        src="https://via.placeholder.com/300"
+                        alt={product.product.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+
+                    <div className="col-span-2 row-span-2 md:row-auto md:col-span-3 flex flex-row justify-between">
                       <h3 className="text-start text-xs md:text-md align-middle font-bold">
                         {product.product.name}
                       </h3>
-                      <div className="flex flex-row justify-evenly border-[1px] border-gray-950  w-20 md:w-24">
+                      <button
+                        className="text-end"
+                        onClick={() => removeProductHandler(product.cartId)}
+                      >
+                        X
+                      </button>
+                    </div>
+                    <div className="col-span-3 md:col-span-3 flex flex-row justify-between">
+                      <div className="flex flex-row justify-evenly border-[1px] border-gray-950 h-10 w-20 md:w-24">
                         <button
                           className="text-md md:text-xl font-semibold text-center"
                           onClick={() =>
@@ -163,14 +168,6 @@ const Cart = () => {
                           +
                         </button>
                       </div>
-                    </div>
-                    <div className="flex flex-col justify-between">
-                      <button
-                        className="text-end"
-                        onClick={() => removeProductHandler(product.cartId)}
-                      >
-                        X
-                      </button>
                       <p className="font-['Fjalla_one'] font-bold">
                         Rp.{' '}
                         {(

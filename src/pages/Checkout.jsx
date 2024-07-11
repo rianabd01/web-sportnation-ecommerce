@@ -40,10 +40,8 @@ const Checkout = () => {
   };
   return (
     <>
-      <div className="max-w-screen-xl bg-inherit mx-auto p-4 dark:text-white">
-        <h1 className="text-black dark:text-white text-center font-bold text-2xl">
-          Home
-        </h1>
+      <div className="max-w-screen-xl bg-inherit mx-auto p-4 text-gray-950">
+        <h1 className="text-inherit text-center font-bold text-2xl">Home</h1>
         <section className="flex flex-row justify-between">
           <div>
             <div className="flex flex-col ">
@@ -53,7 +51,7 @@ const Checkout = () => {
                 id="address"
                 cols="30"
                 rows="10"
-                className="text-black p-2 w-96 h-10"
+                className="text-inherit p-2 w-96 h-10"
               ></textarea>
             </div>
             <ul>
@@ -65,11 +63,11 @@ const Checkout = () => {
                   <img
                     src="https://via.placeholder.com/300"
                     alt=""
-                    className="w-20 h-20 object-cover border-2 border-black dark:border-black"
+                    className="w-20 h-20 object-cover border-2 border-black"
                   />
                   <div className="flex flex-col justify-between ">
                     <p>{item.product.name}</p>
-                    <p className="text-gray-400">
+                    <p className="text-gray-950">
                       {item.quantity}x{item.product.price}
                     </p>
                   </div>
