@@ -2,6 +2,11 @@
 
 This is a personal project, using React Vite (JavaScript) and it just 30% of progress.
 
+# Figma Design
+https://www.figma.com/design/Sbll8UpoYSE9FMH9SSBaza/Untitled?node-id=0-1&t=kVy8kCIAVKLNE4yM-1
+![image](https://github.com/user-attachments/assets/e25bdc8b-f0c8-42ee-aa94-3f5a457487c2)
+
+
 ## Usage
 
 - Install Node v20.13.1
